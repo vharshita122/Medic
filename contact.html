@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="apple.png" alt="Phone Icon">
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="contact-item">
+                <img src="send-data.png" alt="Email Icon">
+                <p>Email: info@hospital.com</p>
+            </div>
+            <div class="contact-item">
+                <img src="location.png" alt="Address Icon">
+                <p>Address: 123 Medical Street, Health City, HC 12345</p>
+            </div>
+        </div>
+        <!-- Contact Us Page -->
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="e30c341d-c1f7-47a9-878d-084b499c034d">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" name="contact-message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+</body>
+</html>
+
