@@ -385,6 +385,71 @@ nav {
     background-color: #ccccff;
 }
 
+#ai-results h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* Button colors */
+.btn.disease {
+    background-color: #FF6666; /* Red */
+}
+
+.btn.description {
+    background-color: #FFB266; /* Orange */
+}
+
+.btn.precaution {
+    background-color: #FFFF66; /* Yellow */
+}
+
+.btn.medication {
+    background-color: #66FF66; /* Green */
+}
+
+.btn.workout {
+    background-color: #66B2FF; /* Blue */
+}
+
+.btn.diet {
+    background-color: #9966FF; /* Purple */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+@media (max-width: 768px) {
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 5px 5px; /* Adjust margin for smaller screens */
+        flex: 1 1 45%; /* Allows two buttons per row on small screens */
+    }
+
+    .button-container {
+        justify-content: space-between;
+    }
+}
+
 
 body {
     font-family: Arial, sans-serif;
