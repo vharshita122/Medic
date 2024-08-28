@@ -250,19 +250,19 @@ nav {
     background-color: #218838; /* Darker green for hover effect */
     transform: scale(1.05); /* Slight scale effect on hover */
 }
-#animations {
+/* #animations {
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
     display: flex;
-    justify-content: space-between; /* Place one image on the left and one on the right */
-    padding: 0 20px; /* Adjust spacing from the edges as needed */
+    justify-content: space-between; 
+    padding: 0 20px; 
 }
 
 .animated-virus, .animated-bacteria {
-    width: 200px; /* Size of the images */
+    width: 200px; 
     height: auto;
     animation: float 4s infinite ease-in-out;
 }
@@ -273,6 +273,42 @@ nav {
 
 .animated-bacteria {
     animation-delay: 2s;
+} */
+#animations {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.animated-virus, .animated-bacteria {
+    width: 200px;
+    height: auto;
+    animation: float 4s infinite ease-in-out;
+}
+
+.animated-virus {
+    animation-delay: 0s;
+}
+
+.animated-bacteria {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes float {
@@ -314,13 +350,7 @@ nav {
         align-items: center;
     }
 
-    #animations {
-        width: 100%;
-        padding: 0 10px;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
+    
 }
 
 @media (max-width: 768px) {
