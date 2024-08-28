@@ -467,16 +467,39 @@ nav {
 .btn:hover {
     opacity: 0.8;
 }
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .btn {
-        padding: 8px 16px;
         font-size: 14px;
-        margin: 5px 5px; /* Adjust margin for smaller screens */
-        flex: 1 1 45%; /* Allows two buttons per row on small screens */
+        padding: 8px 16px;
+        width: 100%; /* Buttons take full width on small screens */
     }
 
     .button-container {
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
 
