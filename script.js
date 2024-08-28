@@ -25,4 +25,7 @@ document.getElementById('menu-icon').addEventListener('click', function() {
     var navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('active');
 });
+function openPage(pageName) {
+    window.location.href = pageName;
+}
 
