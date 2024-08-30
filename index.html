@@ -61,7 +61,7 @@
             <h1>Medicine Recommendation System</h1>
             <form action="https://api.web3forms.com/submit" method="POST" id="recommendation-form">
                 <input type="hidden" name="access_key" value="e30c341d-c1f7-47a9-878d-084b499c034d">
-                <label for="name">Name:</label>
+                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -71,7 +71,73 @@
                 <input type="tel" id="contact" name="contact" required>
                 <button type="submit">Submit</button>
             </form>
-           
+            <script>
+                document.getElementById('recommendation-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+        
+                    const form = event.target;
+                    const formData = new FormData(form);
+        
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Form submitted successfully!');
+                            form.reset(); // Reset the form after successful submission
+                        } else {
+                            alert('There was an issue with your submission. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting the form. Please try again later.');
+                    });
+                });
+            </script>
+             <script>
+                document.getElementById('symptoms').addEventListener('input', function() {
+                    const query = this.value;
+        
+                    if (query.length > 0) {
+                        fetch(`https://api.example.com/symptoms?query=${encodeURIComponent(query)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const suggestionsContainer = document.getElementById('symptom-suggestions');
+                            suggestionsContainer.innerHTML = '';
+                            suggestionsContainer.style.display = 'block';
+        
+                            data.symptoms.forEach(symptom => {
+                                const suggestionDiv = document.createElement('div');
+                                suggestionDiv.textContent = symptom;
+                                suggestionDiv.addEventListener('click', function() {
+                                    document.getElementById('symptoms').value = symptom;
+                                    suggestionsContainer.style.display = 'none';
+                                });
+                                suggestionsContainer.appendChild(suggestionDiv);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching symptoms:', error);
+                        });
+                    } else {
+                        document.getElementById('symptom-suggestions').style.display = 'none';
+                    }
+                });
+        
+                // Hide the suggestions when clicking outside the input or suggestions
+                document.addEventListener('click', function(event) {
+                    const isClickInside = document.getElementById('symptoms').contains(event.target) ||
+                                          document.getElementById('symptom-suggestions').contains(event.target);
+        
+                    if (!isClickInside) {
+                        document.getElementById('symptom-suggestions').style.display = 'none';
+                    }
+                });
+            </script>
+        
         
         <div id="ai-results">
             <h2>Our AI System Results</h2>
